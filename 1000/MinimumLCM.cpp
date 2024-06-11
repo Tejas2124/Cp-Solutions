@@ -20,10 +20,18 @@
 #include <unordered_set>
 using namespace std;
 using ll = long long int;
-//using in = for(auto& v:a)cin>>a;
-#define push_back pb;
 
-void solve(){
+int LCM(int a,int b){
+    return a/__gcd(a,b) * b;
+}
+
+int solve(){
+    int n;cin>>n;
+    for (size_t i = 2; i < n/2; i++)
+    {
+        int x = n - i;
+        if( x % i  == 0 && LCM(x,i) <= x ) {cout<< x<<" "<< i<<endl;break;}
+    }
     
 }
 int main(){
